@@ -21,7 +21,7 @@
           </div>
 
           <div class="item">
-            <img src="{{ asset('images/comunidad.jpg') }} " alt="Gasista">
+            <img src="{{ asset('images/comunidad.jpg') }} " alt="Gasista" width="100%">
             <div class="carousel-caption">
               <h2>SERVICIOS SEGUROS Y RECOMENDADOS POR LA COMUNIDAD DE SERVICE ADVISOR</h2>
               <h3>Profesionales recomendados por la propia comunidad</h3>
