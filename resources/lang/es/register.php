@@ -9,9 +9,7 @@
     'password_confirmation' => 'Confirmar Contraseña',
     'register' => 'Registrar',
     'login' => 'Ingresar',
-  
-
-
+    'logout'=> 'Salir',
 
   ];
 ?>
