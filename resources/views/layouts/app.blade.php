@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Home') }}</title>
+    <title>Service Advisor</title>
 
     <!-- Styles -->
     <!-- Bootstrap -->
@@ -54,7 +54,7 @@
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">@lang('register.login')</a></li>
                             <li><a href="{{ route('register') }}">@lang('register.register')</a></li>
-                            <li><a href="#">Ayuda</a></li>
+                            <li><a href="{{ route('help') }}">@lang('register.help')</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -76,7 +76,7 @@
 
                                 </ul>
                                 <li>
-                                  <a href="#">Ayuda</a>
+                                  <a href="{{ route('help') }}">@lang('register.help')</a></li>
                                 </li>
                             </li>
                         @endif

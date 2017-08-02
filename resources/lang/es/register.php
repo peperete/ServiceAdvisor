@@ -10,6 +10,6 @@
     'register' => 'Registrar',
     'login' => 'Ingresar',
     'logout'=> 'Salir',
-
+    'help' => 'Ayuda',
   ];
 ?>

@@ -9,6 +9,7 @@
     'password_confirmation' => 'Password Confirme',
     'register' => 'Register',
     'login' => 'Login',
+    'help' => 'Help',
 
 
   ];
