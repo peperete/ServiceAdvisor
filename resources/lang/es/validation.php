@@ -60,8 +60,9 @@ return [
     'mimetypes'            => 'The :attribute must be a file of type: :values.',
     'min'                  => [
         'numeric' => 'The :attribute must be at least :min.',
+        // 'integer' => 'Debe contener :min caracteres.',
         'file'    => 'The :attribute must be at least :min kilobytes.',
-        'string'  => 'La Contraseña debe tener al menos 6 caracteres.',
+        'string'  => 'La clave debe tener al menos :min caracteres.',
         'array'   => 'The :attribute must have at least :min items.',
     ],
     'not_in'               => 'The selected :attribute is invalid.',

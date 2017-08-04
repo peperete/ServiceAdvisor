@@ -3,8 +3,11 @@
   return [
 
     'title' => 'Registración',
+    'photo' => 'Foto',
     'name' => 'Nombre',
-    'email' => 'email',
+    'phone' => 'Telefono',
+    'cellphone' => 'Celular',
+    'email' => 'Email',
     'password' => 'Contraseña',
     'password_confirmation' => 'Confirmar Contraseña',
     'register' => 'Registrar',
