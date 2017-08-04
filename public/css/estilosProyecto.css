@@ -29,3 +29,28 @@
 @media screen and (min-width: 768px) {
   #myCarousel { display: block; }  /* show it on small screens */
 }
+.textoayuda {
+  font-family:Cooper;
+  font-size:3em;
+  color:black;
+}
+.iconcenter {
+ color:#979494;
+ font-size:2em;
+ text-align:center;
+}
+.iconos{
+ font-size:1em;
+ font-weight: bold;
+ color:#979494;
+}
+@media screen and (max-width:736px){
+  .glyphicon{
+    display:none;
+  }
+  .textfaq{
+            font-size:2em;
+            text-align:center;
+        }
+}
+}
