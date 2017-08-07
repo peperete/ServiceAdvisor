@@ -12,8 +12,12 @@
     'password_confirmation' => 'Password Confirme',
     'register' => 'Register',
     'login' => 'Login',
+    'logout' => 'logout',
     'help' => 'Help',
-
-
+    'administration' => 'Administration',
+    'profile' => 'Profile',
+    'users' => 'Users',
+    'categories' => 'Categories',
+    'services' => 'Services',
   ];
 ?>

@@ -14,5 +14,10 @@
     'login' => 'Ingresar',
     'logout'=> 'Salir',
     'help' => 'Ayuda',
+    'administration' => 'Administración',
+    'profile' => 'Perfil',
+    'users' => 'Usuarios',
+    'categories' => 'Categorias',
+    'services' => 'Servicios',
   ];
 ?>
