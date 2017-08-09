@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'phone', 'cellphone', 'photo', 'status', 
+        'name', 'email', 'password', 'phone', 'cellphone', 'photo', 'status',
     ];
 
     /**
@@ -26,4 +26,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    const SEARCHABLE = [
+        'name', 'email', 'phone', 'cellphone', 'status', 'role'
+    ];
+
+/*
+    static function getSearchable () {
+      //return $this->searchable;
+      return self::SEARCHABLE;
+    }
+*/
 }
