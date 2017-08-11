@@ -90,8 +90,8 @@ class UserController extends Controller
       //var_dump($user); die;
       $this->validate($request, [
       'name' => 'required|string|max:255',
-      'phone' => 'required|integer|min:10',
-      'cellphone' => 'required|integer|min:10',
+      'phone' => 'required|string|min:10',
+      'cellphone' => 'required|string|min:10',
       'email' => 'required|string|email|max:255|unique:users,email,'.$user->id,
       'role' => 'required|string|max:255',
       'status' => 'required|string|max:255',

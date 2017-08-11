@@ -63,8 +63,8 @@
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
                                   <li><a href="{{ route('users') }}">@lang('register.users')</a></li>
-                                  <li><a href="{{ route('admin') }}">@lang('register.categories')</a></li>
-                                  <li><a href="{{ route('admin') }}">@lang('register.services')</a></li>
+                                  <li><a href="{{ route('login') }}">@lang('register.categories')</a></li>
+                                  <li><a href="{{ route('login') }}">@lang('register.services')</a></li>
                                 </ul>
                               </li>
                             @endif

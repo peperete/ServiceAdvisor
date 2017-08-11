@@ -15,9 +15,15 @@ class CheckUserRole
      */
     public function handle($request, Closure $next, $role)
     {
+      if (!empty($request->user())) {
         if ($request->user()->role !== $role) {
           return redirect('/home');
+        } else {
+          return $next($request);
         }
-        return $next($request);
+      } else {
+        return redirect('/home');
+      }
+
     }
 }
