@@ -19,5 +19,8 @@
     'users' => 'Users',
     'categories' => 'Categories',
     'services' => 'Services',
+    'role'=> 'Role',
+    'status'=> 'Status',
+    'save' => 'Save',
   ];
 ?>

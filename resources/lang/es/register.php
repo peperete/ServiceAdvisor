@@ -19,5 +19,8 @@
     'users' => 'Usuarios',
     'categories' => 'Categorias',
     'services' => 'Servicios',
+    'role'=>'Rol',
+    'status'=>'Estado',
+    'save' => 'Guardar',
   ];
 ?>

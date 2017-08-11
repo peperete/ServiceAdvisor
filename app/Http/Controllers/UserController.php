@@ -84,9 +84,32 @@ class UserController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, $id)
+  public function save(Request $request, $id)
   {
-      //
+      $user = User::find($id);
+      //var_dump($user); die;
+      $this->validate($request, [
+      'name' => 'required|string|max:255',
+      'phone' => 'required|integer|min:10',
+      'cellphone' => 'required|integer|min:10',
+      'email' => 'required|string|email|max:255|unique:users,email,'.$user->id,
+      'role' => 'required|string|max:255',
+      'status' => 'required|string|max:255',
+      // 'password' => 'required|string|min:6|confirmed',
+      // 'photo' => 'image|max:255',
+    ]
+    );
+
+    $user->name = $request->input('name');
+     $user->phone = $request->input('phone');
+     $user->cellphone= $request->input('cellphone');
+     $user->email = $request->input('email');
+     $user->role = $request->input('role');
+    $user->status = $request->input('status');
+    // $user->password = $request->input('password');
+    $user->save();
+    // var_dump($user); die;
+    return  redirect('/users');
   }
 
   /**
