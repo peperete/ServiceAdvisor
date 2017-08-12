@@ -22,5 +22,6 @@
     'role'=> 'Role',
     'status'=> 'Status',
     'save' => 'Save',
+    'cancel' => 'Cancel',
   ];
 ?>

@@ -22,5 +22,6 @@
     'role'=>'Rol',
     'status'=>'Estado',
     'save' => 'Guardar',
+    'cancel' => 'Cancelar',
   ];
 ?>

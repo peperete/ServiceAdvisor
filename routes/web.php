@@ -20,11 +20,17 @@ Route::get('/', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/userRegister', 'HomeController@userRegister')->name('userRegister'); 
+Route::get('/userRegister', 'HomeController@userRegister')->name('userRegister');
 Route::get('/help', 'HomeController@help')->name('help');
 Route::get('/profile', 'HomeController@index')->name('home');
+
 Route::get('/users', 'UserController@users')->middleware('role:admin')->name('users');
 Route::get('/users/filter', 'UserController@usersFiltered')->middleware('role:admin')->name('usersFiltered');
 Route::post('/users/edit/{id}', 'UserController@save')->name('usersSave');
 Route::get('/users/edit/{id}', 'UserController@show')->middleware('role:admin')->name('edit');
+
+Route::get('/categories/filter', 'CategoryController@categoriesFiltered')->name('categoriesFiltered');
+Route::resource('/categories', 'CategoryController');
+
+
 Route::get('/{x}','HomeController@index')->name('home');
