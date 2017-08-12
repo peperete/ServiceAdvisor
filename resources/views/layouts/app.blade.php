@@ -53,7 +53,7 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">@lang('register.login')</a></li>
-                            <li><a href="{{ route('register') }}">@lang('register.register')</a></li>
+                            <li><a href="{{ route('userRegister') }}">@lang('register.register')</a></li>
                             <li><a href="{{ route('help') }}">@lang('register.help')</a></li>
                         @else
                             @if (Auth::user()->role == 'admin')

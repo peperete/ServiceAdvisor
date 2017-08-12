@@ -26,8 +26,9 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function help()
+
+    public function userRegister()
     {
-        return view('help');
+        return view('userRegister');
     }
 }
