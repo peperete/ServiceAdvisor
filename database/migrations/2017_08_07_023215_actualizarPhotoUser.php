@@ -15,6 +15,7 @@ class ActualizarPhotoUser extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
               $table->string('photo')->nullable()->change();
+              // $table->string('photo')->default('default.png');
         });
     }
 
@@ -26,7 +27,7 @@ class ActualizarPhotoUser extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            // $table->dropColum('photo')->default('default.png');
         });
     }
 }

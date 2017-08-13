@@ -87,6 +87,25 @@
             </div>
 
             <div class="form-group">
+              <label for="name" class="col-md-4 control-label">Foto de Perfil</label>
+                <div class="col-md-6">
+
+                  <div class="">
+                  <img src="/storage/{{$user->photo}}"  width="100px" class="thumbnail miniatura" alt="foto">
+                  </div>
+
+                  <input type="file" name="photo" value="{{ $user->photo }}" >
+                  <!-- @if ($errors->has('status'))
+                      <span class="help-block">
+                          <strong>{{ $errors->first('status') }}</strong>
+                      </span>
+                  @endif -->
+
+                </div>
+
+            </div>
+
+            <div class="form-group">
             <div class="col-md-6 col-md-offset-4">
                 <button type="submit" class="btn btn-primary" name="save">
                     @lang('register.save')

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -49,8 +50,8 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
-            'phone' => 'required|integer|max:255',
-            'cellphone' => 'required|integer|max:255',
+            'phone' => 'required|string|max:255',
+            'cellphone' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
             'photo' => 'image|max:255',
@@ -64,11 +65,16 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function create(Request $request, array $data)
     {
       // print_r($request); die;
       // $file = $request->file('photo');
       // $path = $file->store('fotos', 'public');
+
+      if ($request->hasFile('photo')){
+      $file = $request->file('photo');
+      $path = $file->store('photos', 'public');
+      }
 
         return User::create([
             'name' => $data['name'],
@@ -76,7 +82,7 @@ class RegisterController extends Controller
             'cellphone' => $data['cellphone'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'photo' => "path",
+            'photo' => "$path",
             'status' => $data['status'],
         ]);
     }

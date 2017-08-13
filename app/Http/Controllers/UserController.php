@@ -99,6 +99,14 @@ class UserController extends Controller
       // 'photo' => 'image|max:255',
     ]
     );
+      if ($request->hasFile('photo')){
+      $file = $request->file('photo');
+      $path = $file->store('photos', 'public');
+      $user->photo = $path;
+    }
+
+    // $file = $request->file('photo');
+    // $path = $file->store('photos', 'public');
 
     $user->name = $request->input('name');
      $user->phone = $request->input('phone');
@@ -106,6 +114,7 @@ class UserController extends Controller
      $user->email = $request->input('email');
      $user->role = $request->input('role');
     $user->status = $request->input('status');
+    // $user->photo = $path;
     // $user->password = $request->input('password');
     $user->save();
     // var_dump($user); die;

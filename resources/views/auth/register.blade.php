@@ -18,7 +18,7 @@
                             <form class="form-horizontal" action="/register" method="post" enctype="multipart/form-data">
                               <div class="form-group">
                                 <div class="col-sm-6 col-sm-offset-3">
-                                  <img src="images/advisoricono.png"   alt="foto_perfil" class="img-responsive" style="border-radius:100px;border-color:green 2px" width="150px">
+                                  <img src="/storage/photos/default.png"   alt="foto_perfil" class="img-responsive" style="border-radius:100px;border-color:green 2px" width="150px">
                                   <input id="file-input" type="file" name="photo">
                                 </div>
                                 <div class="col-sm-3">
