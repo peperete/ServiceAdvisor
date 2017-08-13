@@ -44,7 +44,7 @@
                   <td><a href="{{ url('/categories/'.$category->id).'/edit' }}">{{ $category->id }}</a></td>
                   <td>{{ $category->name }}</td>
                   <td>{{ $category->status }}</td>
-                  <td>{{ $category->photo }}</td>
+                  <td><img src="/storage/{{ $category->photo }}"  width="100px" class="thumbnail miniatura" alt="foto"></td>
                 </tr>
               @endforeach
             </table>

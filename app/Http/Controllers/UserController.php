@@ -90,8 +90,8 @@ class UserController extends Controller
       //var_dump($user); die;
       $this->validate($request, [
       'name' => 'required|string|max:255',
-      'phone' => 'required|string|min:10',
-      'cellphone' => 'required|string|min:10',
+      'phone' => 'required|string|max:255',
+      'cellphone' => 'required|string|max:255',
       'email' => 'required|string|email|max:255|unique:users,email,'.$user->id,
       'role' => 'required|string|max:255',
       'status' => 'required|string|max:255',
@@ -99,10 +99,10 @@ class UserController extends Controller
       // 'photo' => 'image|max:255',
     ]
     );
-      if ($request->hasFile('photo')){
-      $file = $request->file('photo');
-      $path = $file->store('photos', 'public');
-      $user->photo = $path;
+    if ($request->hasFile('photo')){
+        $file = $request->file('photo');
+        $path = $file->store('photos', 'public');
+        $user->photo = $path;
     }
 
     // $file = $request->file('photo');

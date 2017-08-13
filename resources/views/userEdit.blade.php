@@ -91,7 +91,12 @@
                 <div class="col-md-6">
 
                   <div class="">
-                  <img src="/storage/{{$user->photo}}"  width="100px" class="thumbnail miniatura" alt="foto">
+                    @if ($user->photo)
+                        <img src="/storage/{{$user->photo}}"  width="100px" class="thumbnail miniatura" alt="foto">
+                    @else
+                        <img src="/storage/photos/silueta_foto_perfil.jpg"  width="100px" class="thumbnail miniatura" alt="foto">
+                    @endif
+
                   </div>
 
                   <input type="file" name="photo" value="{{ $user->photo }}" >

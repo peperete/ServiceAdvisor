@@ -35,7 +35,10 @@
             <div class="form-group">
               <label for="photo" class="col-md-4 control-label">@lang('register.photo')</label>
               <div class="col-md-6">
-                <input type="text" name="photo" class="form-control">
+
+                <img src="/storage/photos/categories_default.jpg"  id="file-img-input" width="100px" class="thumbnail miniatura" alt="foto">
+
+                <input id="file-input" type="file" onchange="readURL(this);" name="photo">
                 @if ($errors->has('photo'))
                   <span class="help-block">
                       <strong>{{ $errors->first('photo') }}</strong>

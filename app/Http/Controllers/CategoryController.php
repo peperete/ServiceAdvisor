@@ -65,9 +65,16 @@ class CategoryController extends Controller
         'name' => 'required|string|max:255',
         'status' =>'required',
       ]);
+
+      $path = '';
+      if ($request->hasFile('photo')){
+          $file = $request->file('photo');
+          $path = $file->store('photos', 'public');
+      }
+
         $category = new Category;
         $category->name = $request->input('name');
-        $category->photo = $request->input('photo');
+        $category->photo = "$path";//$request->input('photo');
         $category->status = $request->input('status');
         $category->save();
         return redirect('/categories');
@@ -111,8 +118,15 @@ class CategoryController extends Controller
         'name' => 'required|string|max:255',
         'status' =>'required',
       ]);
+
+      $path = '';
+      if ($request->hasFile('photo')){
+          $file = $request->file('photo');
+          $path = $file->store('photos', 'public');
+      }
+
       $category->name = $request->input('name');
-      $category->photo = $request->input('photo');
+      $category->photo = "$path";//$request->input('photo');
       $category->status = $request->input('status');
       $category->save();
       return  redirect('/categories');

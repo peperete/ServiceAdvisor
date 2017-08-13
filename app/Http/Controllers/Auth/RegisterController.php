@@ -71,9 +71,10 @@ class RegisterController extends Controller
       // $file = $request->file('photo');
       // $path = $file->store('fotos', 'public');
 
+      $path = '';
       if ($request->hasFile('photo')){
-      $file = $request->file('photo');
-      $path = $file->store('photos', 'public');
+        $file = $request->file('photo');
+        $path = $file->store('photos', 'public') ;
       }
 
         return User::create([

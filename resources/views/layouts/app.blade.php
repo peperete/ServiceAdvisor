@@ -113,6 +113,7 @@
 
     {{-- Si incluyo bootstrap-min.js junto con app.js deja de funcionar el menu. deje app.js --}}
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
 </body>
 <footer class="container-fluid text-center">
   <div class="row">
