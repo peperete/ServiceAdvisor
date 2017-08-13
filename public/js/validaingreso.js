@@ -1,13 +1,13 @@
 window.onload = function(){
   document.getElementById('Err').style.display='none';
 
-    document.getElementById('formulario').addEventListener('submit', function(event){
+    document.getElementById('login').addEventListener('click', function(event){
       var errores = [];
-
+      
       if(document.getElementById('email').value==''){
         errores.push("El Email es requerido");
       }
-      if(document.getElementById('pwd').value==''){
+      if(document.getElementById('password').value==''){
         errores.push("Debe ingresar la contraseña");
       }
 

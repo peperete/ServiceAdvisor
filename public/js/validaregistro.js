@@ -1,49 +1,33 @@
 window.onload = function(){
   document.getElementById('Err').style.display='none';
 
-    document.getElementById('formulario').addEventListener('submit', function(event){
+    document.getElementById('login').addEventListener('click', function(event){
       var errores = [];
       //alert(errores);
       //event.preventDefault();
       //if(document.getElementById('file-input').value==''){
       //  errores.push("La foto es requerida");
       //}
-      if(document.getElementById('nombre').value==''){
+      if(document.getElementById('name').value==''){
         errores.push("El nombre es requerido");
       }
-      if(document.getElementById('apellido').value==''){
-        errores.push("El apellido es requerido");
-      }
-      if(document.getElementById('telfijo').value==''){
+
+      if(document.getElementById('phone').value==''){
         errores.push("El Telefono es requerido");
       }
-      if(document.getElementById('celular').value==''){
+      if(document.getElementById('cellphone').value==''){
         errores.push("El Celular es requerido");
       }
       if(document.getElementById('email').value==''){
         errores.push("El Email es requerido");
       }
-
-      if(document.getElementById('pregunta_1').value==''){
-        errores.push("Debe seleccionar la pregunta 1");
-      }
-      if(document.getElementById('respuesta_1').value==''){
-        errores.push("La respuesta 1 es requerida");
-      }
-
-      if(document.getElementById('pregunta_2').value==''){
-        errores.push("Debe seleccionar la pregunta 2");
-      }
-      if(document.getElementById('respuesta_2_2').value==''){
-        errores.push("La respuesta 2 es requerida");
-      }
-      if(document.getElementById('pwd').value==''){
+      if(document.getElementById('password').value==''){
         errores.push("Debe ingresar una contraseña");
       }
-      if(document.getElementById('cpwd').value==''){
+      if(document.getElementById('password-confirm').value==''){
         errores.push("Debe confirmar la contraseña");
       }
-      if(document.getElementById('pwd').value != document.getElementById('cpwd').value){
+      if(document.getElementById('password').value != document.getElementById('password-confirm').value){
         errores.push("las contraseñas son diferentes");
       }
 

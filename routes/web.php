@@ -19,7 +19,7 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/userRegister', 'HomeController@userRegister')->name('userRegister');
 Route::get('/help', 'HomeController@help')->name('help');
 Route::get('/profile', 'HomeController@index')->name('home');
