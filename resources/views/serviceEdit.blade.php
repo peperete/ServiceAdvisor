@@ -13,7 +13,14 @@
             <div class="form-group">
               <label for="category_id" class="col-md-4 control-label">Categoría</label>
               <div class="col-md-6">
-                <input type="integer" name="category_id" value="{{ $service->category_id }}" class="form-control">
+                {{-- <input type="integer" name="category_id" value="{{ $service->category_id }}" class="form-control"> --}}
+                <select class="form-control" name="category_id">
+                  @foreach ($categories as $category)
+                    <option value="{{ $category->id }}"
+                      @if ($service->category_id == $category->id) selected @endif>
+                      {{ $category->name}}</option>
+                  @endforeach
+                </select>
                 @if ($errors->has('category_id'))
                   <span class="help-block">
                       <strong>{{ $errors->first('category_id') }}</strong>

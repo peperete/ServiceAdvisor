@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Service;
+use \App\Category;
 
 class ServiceController extends Controller
 {
@@ -20,28 +21,20 @@ class ServiceController extends Controller
      */
     public function index(Request $request)
     {
-      $paginate = $request->input('paginate');
-      if (is_null($paginate)) {
-        $paginate = 15;
-      }
-      $services = Service::paginate($paginate);
-      return view('services', ['services' => $services, 'paginate' => $paginate]);
+      $services = Service::paginate(5);
+      return view('services', ['services' => $services]);
     }
 
     public function servicesFiltered(Request $request)
     {
         $filter = $request->input('filter');
         $value = $request->input('value');
-        $paginate = $request->input('paginate');
-        if (is_null($paginate)) {
-          $paginate = 15;
-        }
         if (is_null($value)) {
-          $services = Service::paginate($paginate);
+          $services = Service::paginate(5);
         } else {
-          $services = Service::where($filter,'like', '%'.$value.'%')->paginate($paginate);
+          $services = Service::where($filter,'like', '%'.$value.'%')->paginate(5);
         }
-        return view('services', ['services' => $services, 'paginate' => $paginate]);
+        return view('services', ['services' => $services]);
     }
 
     /**
@@ -51,7 +44,8 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('serviceCreate');
+        $categories = Category::all();
+        return view('serviceCreate',['categories'=>$categories]);
     }
 
     /**
@@ -96,7 +90,8 @@ class ServiceController extends Controller
     public function edit($id)
     {
       $service = Service::find($id);
-      return view('serviceEdit', ['service'=>$service]);
+      $categories = Category::all();
+      return view('serviceEdit', ['service'=>$service, 'categories'=>$categories]);
     }
 
     /**

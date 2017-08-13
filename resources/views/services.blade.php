@@ -14,17 +14,9 @@
                   <select class="form-control" name="filter">
                     <option value="name">Nombre</option>
                     <option value="status">Estado</option>
-                    <option value="category_id">Categoría</option>
+                    <option value="category_id">Id Categoría</option>
                   </select>
                   <input type="text" class="form-control" placeholder="Search" name="value">
-                  Filas
-                  <select class="form-control" name="paginate">
-                    <option value="5">5</option>
-                    <option value="15">15</option>
-                    <option value="30">30</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                  </select>
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
                 <button type="submit" formaction="/services/create" class="btn btn-default navbar-btn">Create</button>
@@ -37,6 +29,7 @@
             <table class="table table-hover">
               <tr>
                 <th>Id</th>
+                <th>Id Categoría</th>
                 <th>Categoría</th>
                 <th>Nombre</th>
                 <th>Estado</th>
@@ -46,6 +39,7 @@
                 <tr>
                   <td><a href="{{ url('/services/'.$service->id).'/edit' }}">{{ $service->id }}</a></td>
                   <td>{{ $service->category_id }}</td>
+                  <td>{{ $service->category->name }}</td>
                   <td>{{ $service->name }}</td>
                   <td>{{ $service->status }}</td>
                   <td>{{ $service->photo }}</td>
