@@ -32,5 +32,7 @@ Route::get('/users/edit/{id}', 'UserController@show')->middleware('role:admin')-
 Route::get('/categories/filter', 'CategoryController@categoriesFiltered')->name('categoriesFiltered');
 Route::resource('/categories', 'CategoryController');
 
+Route::get('/services/filter', 'ServiceController@servicesFiltered')->name('servicesFiltered');
+Route::resource('/services', 'ServiceController');
 
 Route::get('/{x}','HomeController@index')->name('home');
