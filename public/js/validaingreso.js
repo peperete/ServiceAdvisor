@@ -1,9 +1,10 @@
+
 window.onload = function(){
-  document.getElementById('Err').style.display='none';
+   document.getElementById('Err').style.display='none';
 
     document.getElementById('login').addEventListener('click', function(event){
       var errores = [];
-      
+
       if(document.getElementById('email').value==''){
         errores.push("El Email es requerido");
       }
@@ -29,4 +30,5 @@ window.onload = function(){
       }
 
       });
+
 }

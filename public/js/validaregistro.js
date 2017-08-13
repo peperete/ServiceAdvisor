@@ -1,13 +1,14 @@
 window.onload = function(){
-  document.getElementById('Err').style.display='none';
 
+    document.getElementById('Err').style.display='none';
     document.getElementById('login').addEventListener('click', function(event){
       var errores = [];
       //alert(errores);
       //event.preventDefault();
       //if(document.getElementById('file-input').value==''){
       //  errores.push("La foto es requerida");
-      //}
+
+
       if(document.getElementById('name').value==''){
         errores.push("El nombre es requerido");
       }

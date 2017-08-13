@@ -7,9 +7,10 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">@lang('login.title')</div>
-<!---                 errores js   -------------------->
-                    <div class="alert alert-danger" role="alert" id="Err"></div>
-<!---                fin errores  js -------------------->      
+<!---                 errores js   -->
+                    <div class="alert alert-danger" role="alert" id="Err" style="display:none;"></div>
+
+<!---                fin errores  js -------------------->
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}" id="formulario">
                         {{ csrf_field() }}

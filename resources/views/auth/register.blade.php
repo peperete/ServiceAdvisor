@@ -8,7 +8,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">@lang('register.title')</div>
 <!---                 errores js   -------------------->
-                <div class="alert alert-danger" role="alert" id="Err"></div>
+                <div class="alert alert-danger" role="alert" id="Err" style="display:none;"></div>
 <!---                 fin errores js   -------------------->
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}" enctype="multipart/form-data" id="formulario">
