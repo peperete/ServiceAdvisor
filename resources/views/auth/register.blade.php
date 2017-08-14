@@ -109,6 +109,7 @@
                             </div>
                         </div>
                         <input type="hidden" name="status" value="active">
+                        <input type="hidden" name="role" value="{{ app('request')->input('role') }}">
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

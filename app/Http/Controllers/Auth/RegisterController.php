@@ -28,6 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
+
     protected $redirectTo = '/';
 
     /**
@@ -77,14 +78,18 @@ class RegisterController extends Controller
         $path = $file->store('photos', 'public') ;
       }
 
-        return User::create([
-            'name' => $data['name'],
-            'phone' => $data['phone'],
-            'cellphone' => $data['cellphone'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-            'photo' => "$path",
-            'status' => $data['status'],
-        ]);
+      $role = $request->input('role');
+
+      return User::create([
+          'name' => $data['name'],
+          'phone' => $data['phone'],
+          'cellphone' => $data['cellphone'],
+          'email' => $data['email'],
+          'password' => bcrypt($data['password']),
+          'photo' => "$path",
+          'status' => $data['status'],
+          'role' => $role,
+      ]);
+
     }
 }

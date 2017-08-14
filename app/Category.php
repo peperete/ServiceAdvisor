@@ -17,5 +17,10 @@ class Category extends Model
       'name', 'photo', 'status'
   ];
 
+  public function services()
+  {
+    return $this->hasMany('App\Service');
+  }
+
 
 }

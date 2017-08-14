@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'phone', 'cellphone', 'photo', 'status',
+        'name', 'email', 'password', 'phone', 'cellphone', 'photo', 'status', 'role'
     ];
 
     /**
@@ -31,10 +31,8 @@ class User extends Authenticatable
         'name', 'email', 'phone', 'cellphone', 'status', 'role'
     ];
 
-/*
-    static function getSearchable () {
-      //return $this->searchable;
-      return self::SEARCHABLE;
+    public function professionalProfile()
+    {
+      return $this->hasMany('App\ProfessionalProfile');
     }
-*/
 }
