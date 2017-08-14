@@ -11,7 +11,7 @@ class ProfessionalProfile extends Model
       'businessname', 'doctype', 'docnumber','taxstatus', 'comercialname', 'generalinfo', 'street', 'number', 'postalcode', 'phone', 'cellphone', 'user_id',
   ];
 
-  public function category() {
+  public function user() {
     return $this->belongsTo('App\User');
   }
 }
