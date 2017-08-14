@@ -119,14 +119,14 @@ class CategoryController extends Controller
         'status' =>'required',
       ]);
 
-      $path = '';
+      //$path = '';
       if ($request->hasFile('photo')){
           $file = $request->file('photo');
           $path = $file->store('photos', 'public');
+          $category->photo = "$path";//$request->input('photo');
       }
 
       $category->name = $request->input('name');
-      $category->photo = "$path";//$request->input('photo');
       $category->status = $request->input('status');
       $category->save();
       return  redirect('/categories');

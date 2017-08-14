@@ -44,7 +44,13 @@
                   <td><a href="{{ url('/categories/'.$category->id).'/edit' }}">{{ $category->id }}</a></td>
                   <td>{{ $category->name }}</td>
                   <td>{{ $category->status }}</td>
-                  <td><img src="/storage/{{ $category->photo }}"  width="100px" class="thumbnail miniatura" alt="foto"></td>
+                  <td>
+                    @if ($category->photo)
+                        <img src="/storage/{{$category->photo}}" id="file-img-input"  width="100px" class="thumbnail miniatura" alt="foto">
+                    @else
+                        <img src="/images/categories_default.jpg"  width="100px" class="thumbnail miniatura" alt="foto">
+                    @endif
+                  </td>
                 </tr>
               @endforeach
             </table>

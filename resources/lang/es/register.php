@@ -23,5 +23,7 @@
     'status'=>'Estado',
     'save' => 'Guardar',
     'cancel' => 'Cancelar',
+    'title2' => 'Editar Perfil',
+
   ];
 ?>

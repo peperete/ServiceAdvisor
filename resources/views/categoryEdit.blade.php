@@ -41,9 +41,8 @@
                   @if ($category->photo)
                       <img src="/storage/{{$category->photo}}" id="file-img-input"  width="100px" class="thumbnail miniatura" alt="foto">
                   @else
-                      <img src="/storage/photos/categories_default.jpg" id="file-img-input" width="100px" class="thumbnail miniatura" alt="foto">
+                      <img src="/images/categories_default.jpg" id="file-img-input" width="100px" class="thumbnail miniatura" alt="foto">
                   @endif
-
                 </div>
                 <input id="file-input" type="file" onchange="readURL(this);" name="photo">
 

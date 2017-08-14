@@ -42,7 +42,15 @@
                   <td>{{ $service->category->name }}</td>
                   <td>{{ $service->name }}</td>
                   <td>{{ $service->status }}</td>
-                  <td>{{ $service->photo }}</td>
+                  <td>
+                    @if ($service->photo)
+                      <img src="/storage/{{$service->photo}}" id="file-img-input"  width="100px" class="thumbnail miniatura" alt="foto">
+                  @else
+                      <img src="/images/categories_default.jpg"  width="100px" class="thumbnail miniatura" alt="foto">
+                  @endif
+
+                  </td>
+
                 </tr>
               @endforeach
             </table>

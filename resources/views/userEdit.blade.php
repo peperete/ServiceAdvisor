@@ -94,7 +94,7 @@
                     @if ($user->photo)
                         <img src="/storage/{{$user->photo}}"  width="100px" class="thumbnail miniatura" alt="foto">
                     @else
-                        <img src="/storage/photos/silueta_foto_perfil.jpg"  width="100px" class="thumbnail miniatura" alt="foto">
+                        <img src="/images/silueta_foto_perfil.jpg"  width="100px" class="thumbnail miniatura" alt="foto">
                     @endif
 
                   </div>

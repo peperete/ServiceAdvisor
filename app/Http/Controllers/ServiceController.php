@@ -61,9 +61,15 @@ class ServiceController extends Controller
         'status' =>'required',
         'category_id' => 'required',
       ]);
+
+      $path = '';
+      if ($request->hasFile('photo')){
+          $file = $request->file('photo');
+          $path = $file->store('photos', 'public');
+      }
         $service = new Service;
         $service->name = $request->input('name');
-        $service->photo = $request->input('photo');
+        $service->photo = "$path";//$request->input('photo');
         $service->status = $request->input('status');
         $service->category_id = $request->input('category_id');
         $service->save();
@@ -109,8 +115,15 @@ class ServiceController extends Controller
         'status' =>'required',
         'category_id' => 'required',
       ]);
+
+      if ($request->hasFile('photo')){
+          $file = $request->file('photo');
+          $path = $file->store('photos', 'public');
+          $service->photo = "$path";//$request->input('photo');
+      }
+
       $service->name = $request->input('name');
-      $service->photo = $request->input('photo');
+      // $service->photo = $request->input('photo');
       $service->status = $request->input('status');
       $service->category_id = $request->input('category_id');
       $service->save();

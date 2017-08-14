@@ -19,10 +19,13 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/userRegister', 'HomeController@userRegister')->name('userRegister');
 Route::get('/help', 'HomeController@help')->name('help');
-Route::get('/profile', 'HomeController@index')->name('home');
+// Route::get('/profile', 'HomeController@index')->name('home');
+Route::get('/profile', 'HomeController@perfilEdit')->name('perfilEdit');
+// Route::get('/profile/edit/{id}', 'UserConroller@save')->name('usersSave');
+
 
 Route::get('/users', 'UserController@users')->middleware('role:admin')->name('users');
 Route::get('/users/filter', 'UserController@usersFiltered')->middleware('role:admin')->name('usersFiltered');
