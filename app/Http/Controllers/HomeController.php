@@ -36,4 +36,11 @@ class HomeController extends Controller
     {
         return view('userRegister');
     }
+
+    public function perfilEdit()
+    {
+        return view('perfilEdit');
+    }
+
+
 }

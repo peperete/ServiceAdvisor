@@ -6,12 +6,12 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">@lang('register.title')</div>
+                <div class="panel-heading">@lang('register.title2')</div>
 <!---                 errores js   -------------------->
                 <div class="alert alert-danger" role="alert" id="Err" style="display:none;"></div>
 <!---                 fin errores js   -------------------->
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}" enctype="multipart/form-data" id="formulario">
+                    <form class="form-horizontal" method="POST" action="{{ route('perfilEdit') }}" enctype="multipart/form-data" id="formulario">
                         {{ csrf_field() }}
 
       <!-- Insertar Imagen -->
@@ -109,12 +109,11 @@
                             </div>
                         </div>
                         <input type="hidden" name="status" value="active">
-                        <input type="hidden" name="role" value="{{ app('request')->input('role') }}">
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="bottom" class="btn btn-primary" name="register" id="login">
-                                    @lang('register.register')
+                                    @lang('register.save')
                                 </button>
                             </div>
                         </div>
@@ -125,5 +124,5 @@
     </div>
   </p>
 </div>
-<script src="{{ asset('js/validaregistro.js') }}"></script>
+<!-- <script src="{{ asset('js/validaregistro.js') }}"></script> -->
 @endsection

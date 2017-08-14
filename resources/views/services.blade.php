@@ -5,21 +5,25 @@
   <div class="container">
     <div class="row">
       <div class="panel panel-default">
-        <div class="panel-heading"><h3>Administración de Servicios</h3></div>
+        <div class="panel-heading"><h3>@lang('register.titleAS')</h3></div>
         <nav class="navbar navbar-default">
           <div class="container-fluid">
             <div class="navbar-header">
               <form class="navbar-form navbar-left" role="search" action="/services/filter" method="get">
                 <div class="form-group">
                   <select class="form-control" name="filter">
-                    <option value="name">Nombre</option>
-                    <option value="status">Estado</option>
-                    <option value="category_id">Id Categoría</option>
+                    <option value="name">@lang('register.name')</option>
+                    <option value="id">@lang('register.id')</option>
+                    <option value="id_category">@lang('register.id_category')</option>
+                    <option value="category">@lang('register.category')</option>
+                    <option value="id_category">@lang('register.category')</option>
+                    <option value="status">@lang('register.status')</option>
+
                   </select>
                   <input type="text" class="form-control" placeholder="Search" name="value">
                 </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-                <button type="submit" formaction="/services/create" class="btn btn-default navbar-btn">Create</button>
+                <button type="submit" class="btn btn-default">@lang('register.search')</button>
+                <button type="submit" formaction="/services/create" class="btn btn-default navbar-btn">@lang('register.create')</button>
               </form>
             </div>
           </div>
@@ -28,12 +32,12 @@
           <div class="table-responsive">
             <table class="table table-hover">
               <tr>
-                <th>Id</th>
-                <th>Id Categoría</th>
-                <th>Categoría</th>
-                <th>Nombre</th>
-                <th>Estado</th>
-                <th>Foto</th>
+                <th>@lang('register.id')</th>
+                <th>@lang('register.id_category')</th>
+                <th>@lang('register.category')</th>
+                <th>@lang('register.name')</th>
+                <th>@lang('register.status')</th>
+                <th>@lang('register.photo')</th>
               </tr>
               @foreach ($services as $service)
                 <tr>
@@ -42,7 +46,15 @@
                   <td>{{ $service->category->name }}</td>
                   <td>{{ $service->name }}</td>
                   <td>{{ $service->status }}</td>
-                  <td>{{ $service->photo }}</td>
+                  <td>
+                    @if ($service->photo)
+                      <img src="/storage/{{$service->photo}}" id="file-img-input"  width="100px" class="thumbnail miniatura" alt="foto">
+                  @else
+                      <img src="/images/categories_default.jpg"  width="100px" class="thumbnail miniatura" alt="foto">
+                  @endif
+
+                  </td>
+
                 </tr>
               @endforeach
             </table>

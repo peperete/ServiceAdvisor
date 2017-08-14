@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row">
       <div class="panel panel-default">
-        <div class="panel-heading"><h3>Administración de Usuarios</h3></div>
+        <div class="panel-heading"><h3>@lang('register.titleAU')</h3></div>
         <nav class="navbar navbar-default">
           <div class="container-fluid">
             <div class="navbar-header">
@@ -29,8 +29,8 @@
                     <option value="100">100</option>
                   </select>
                 </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-                <button type="submit" formaction="/users/create" class="btn btn-default navbar-btn">Create</button>
+                <button type="submit" class="btn btn-default">@lang('register.search')</button>
+                <button type="submit" formaction="/users/create" class="btn btn-default navbar-btn">@lang('register.create')</button>
               </form>
             </div>
           </div>
@@ -40,12 +40,12 @@
             <table class="table table-hover">
               <tr>
                 <th>Id</th>
-                <th>Nombre</th>
-                <th>Email</th>
-                <th>Teléfono</th>
-                <th>Celular</th>
-                <th>Rol</th>
-                <th>Estado</th>
+                <th>@lang('register.name')</th>
+                <th>@lang('register.email')</th>
+                <th>@lang('register.phone')</th>
+                <th>@lang('register.cellphone')</th>
+                <th>@lang('register.role')</th>
+                <th>@lang('register.status')</th>
               </tr>
               @foreach ($users as $user)
                 <tr>

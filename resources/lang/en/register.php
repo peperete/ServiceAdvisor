@@ -23,5 +23,16 @@
     'status'=> 'Status',
     'save' => 'Save',
     'cancel' => 'Cancel',
+    'title2' => 'Perfil Edit',
+    'search' => 'Search',
+    'create' => 'Create',
+    'id' => 'Id',
+    'row' => 'Row',
+    'category' => 'Category',
+    'id_category' => 'Id_Category',
+    'titleAU' => 'User Administration',
+    'titleAC' =>'Category Administration',
+    'titleAS' =>'Service Administration',
+
   ];
 ?>

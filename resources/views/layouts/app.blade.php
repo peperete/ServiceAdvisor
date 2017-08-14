@@ -76,7 +76,7 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="#">@lang('register.profile')</a>
+                                        <a href="{{ route('perfilEdit') }}">@lang('register.profile')</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('logout') }}"
