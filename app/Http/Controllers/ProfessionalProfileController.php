@@ -3,9 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\ProfessionalProfile;
 
 class ProfessionalProfileController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('role:professional');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +19,7 @@ class ProfessionalProfileController extends Controller
      */
     public function index()
     {
-        //
+      return view('professionalProfile');
     }
 
     /**

@@ -13,10 +13,10 @@ class CrearTablaProfessionalProfiles extends Migration
      */
     public function up()
     {
-        Schema::create('professionalProfiless', function (Blueprint $table) {
+        Schema::create('professionalProfiles', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('businessname');
+            $table->string('businessname')->nullable();
             $table->string('doctype')->nullable();
             $table->string('docnumber')->nullable();
             $table->string('taxstatus')->nullable();
