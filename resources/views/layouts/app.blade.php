@@ -75,13 +75,20 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     @if (Auth::user()->role == "professional")
-                                      <li>
+
                                         @if (empty(Auth::user()->professionalProfile))
-                                          <a href="{{ route('professionalProfile.create') }}">@lang('register.professionalProfile')</a>
+                                          <li>
+                                            <a href="{{ route('professionalProfile.create') }}">@lang('register.professionalProfile')</a>
+                                          </li>
                                         @else
-                                          <a href="{{ route('professionalProfile.index') }}">@lang('register.professionalProfile')</a>
+                                          <li>
+                                            <a href="{{ route('professionalProfile.index') }}">@lang('register.professionalProfile')</a>
+                                          </li>
+                                          <li>
+                                            <a href="{{ route('professionalprofileCategories.index') }}">Categorías de Servicios</a>
+                                          </li>
                                         @endif
-                                      </li>
+
                                     @endif
                                     <li>
                                       <a href="{{ route('perfilEdit') }}">@lang('register.profile')</a>

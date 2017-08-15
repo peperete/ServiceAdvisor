@@ -22,5 +22,9 @@ class Category extends Model
     return $this->hasMany('App\Service');
   }
 
+  public function professionalprofiles(){
+    return $this->belongsToMany('App\Professionalprofiles', 'professionalprofiles_categories');
+  }
+
 
 }

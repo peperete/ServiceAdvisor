@@ -40,4 +40,6 @@ Route::resource('/services', 'ServiceController');
 
 Route::resource('/professionalProfile', 'ProfessionalProfileController');
 
+Route::resource('/professionalprofileCategories', 'ProfessionalprofileCategoryController');
+
 Route::get('/{x}','HomeController@index')->name('home');

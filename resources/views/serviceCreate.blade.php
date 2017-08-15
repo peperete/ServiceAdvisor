@@ -21,7 +21,6 @@
                     <option value="{{ $category->id }}">{{ $category->name}}</option>
                   @endforeach
                 </select>
-                {{-- <input type="integer" name="category_id" class="form-control" id="category_id"> --}}
                 @if ($errors->has('category_id'))
                   <span class="help-block">
                       <strong>{{ $errors->first('category_id') }}</strong>
