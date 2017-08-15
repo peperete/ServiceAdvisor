@@ -33,6 +33,6 @@ class User extends Authenticatable
 
     public function professionalProfile()
     {
-      return $this->hasOne('App\ProfessionalProfile');
+      return $this->hasOne('App\Professionalprofile');
     }
 }

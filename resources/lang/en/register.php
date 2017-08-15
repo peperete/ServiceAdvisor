@@ -33,6 +33,7 @@
     'titleAU' => 'User Administration',
     'titleAC' =>'Category Administration',
     'titleAS' =>'Service Administration',
+    'professionalProfile' => 'Professional Profile',
 
   ];
 ?>

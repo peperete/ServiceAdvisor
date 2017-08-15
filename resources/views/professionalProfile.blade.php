@@ -7,14 +7,15 @@
       <div class="panel panel-default">
         <div class="panel-heading"><h3>Perfil Profesional</h3></div>
         <div class="panel-body">
-          <form class="form-horizontal" method="POST" action="/professionalProfile/{{ Auth::user()->professionalProfile()->id }}" enctype="multipart/form-data">
+          <form class="form-horizontal" method="POST" action="/professionalProfile/{{ Auth::user()->professionalProfile->id }}" enctype="multipart/form-data">
             {{ csrf_field() }}
             {{ method_field('PUT') }}
+            {{-- Invoca al método ProfessionalProfileController@update --}}
 
             <div class="form-group">
               <label for="businessname" class="col-md-4 control-label">Razón Social</label>
               <div class="col-md-6">
-                <input type="text" name="businessname" value="{{ Auth::user()->professionalProfile()->businessname }}" class="form-control">
+                <input type="text" name="businessname" value="{{ Auth::user()->professionalProfile->businessname }}" class="form-control">
                 @if ($errors->has('businessname'))
                   <span class="help-block">
                     <strong>{{ $errors->first('businessname') }}</strong>
