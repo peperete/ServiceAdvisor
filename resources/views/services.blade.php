@@ -47,9 +47,9 @@
                   <td>{{ $service->status }}</td>
                   <td>
                     @if ($service->photo)
-                      <img src="/storage/{{$service->photo}}" id="file-img-input"  width="100px" class="thumbnail miniatura" alt="foto">
+                      <img src="/storage/{{$service->photo}}" id="file-img-input"  width="60px" class="thumbnail miniatura" alt="foto">
                   @else
-                      <img src="/images/categories_default.jpg"  width="100px" class="thumbnail miniatura" alt="foto">
+                      <img src="/images/categories_default.jpg"  width="60px" class="thumbnail miniatura" alt="foto">
                   @endif
 
                   </td>
