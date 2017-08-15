@@ -44,7 +44,7 @@ class HomeController extends Controller
         if($user) {
           return view('perfilEdit', ['user'=>$user]);
         } else {
-          return view('/login');
+          return view('home');
         }
     }
 
