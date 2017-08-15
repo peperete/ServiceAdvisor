@@ -41,8 +41,18 @@ class ProfessionalprofileController extends Controller
     public function store(Request $request)
     {
       $profile = new Professionalprofile;
-      $profile->businessname = $request->input('businessname');
       $profile->user_id = $request->input('user_id');
+      $profile->businessname = $request->input('businessname');
+      $profile->doctype = $request->input('doctype');
+      $profile->docnumber = $request->input('docnumber');
+      $profile->taxstatus = $request->input('taxstatus');
+      $profile->comercialname = $request->input('comercialname');
+      $profile->generalinfo = $request->input('generalinfo');
+      $profile->street = $request->input('street');
+      $profile->number= $request->input('number');
+      $profile->postalcode= $request->input('postalcode');
+      $profile->phone = $request->input('phone');
+      $profile->cellphone= $request->input('cellphone');
       $profile->save();
       return redirect('/');
     }
@@ -78,7 +88,20 @@ class ProfessionalprofileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $profile = Professionalprofile::find($id);
+      $profile->businessname = $request->input('businessname');
+      $profile->doctype = $request->input('doctype');
+      $profile->docnumber = $request->input('docnumber');
+      $profile->taxstatus = $request->input('taxstatus');
+      $profile->comercialname = $request->input('comercialname');
+      $profile->generalinfo = $request->input('generalinfo');
+      $profile->street = $request->input('street');
+      $profile->number= $request->input('number');
+      $profile->postalcode= $request->input('postalcode');
+      $profile->phone = $request->input('phone');
+      $profile->cellphone= $request->input('cellphone');
+      $profile->save();
+      return redirect('/');
     }
 
     /**
