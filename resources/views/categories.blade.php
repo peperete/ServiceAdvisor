@@ -17,14 +17,6 @@
                     <option value="status">@lang('register.status')</option>
                   </select>
                   <input type="text" class="form-control" placeholder="Search" name="value">
-                  @lang('register.row')
-                  <select class="form-control" name="paginate">
-                    <option value="5">5</option>
-                    <option value="15">15</option>
-                    <option value="30">30</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                  </select>
                 </div>
                 <button type="submit" class="btn btn-default">@lang('register.search')</button>
                 <button type="submit" formaction="/categories/create" class="btn btn-default navbar-btn">@lang('register.create')</button>

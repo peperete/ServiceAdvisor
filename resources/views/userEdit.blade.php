@@ -6,16 +6,13 @@
     <div class="row">
       <div class="panel panel-default">
         <div class="panel-heading"><h3>Modificar Usuario</h3></div>
-        <!-- <form class="" action="" method="post"> -->
+        <div class="panel-body">
           <form class="form-horizontal" method="POST" action="/users/edit/{{ $user->id }}" enctype="multipart/form-data">
               {{ csrf_field() }}
-              <p>
-              <!-- <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}"> -->
                 <div class="form-group">
                 <label for="name" class="col-md-4 control-label">@lang('register.name')</label>
 
                 <div class="col-md-6">
-                    <!-- <input id="name" type="text"  name="name" value="{{ old('name') }}" required autofocus> -->
                     <input type="text" name="name" value="{{ $user->name }}" class="form-control">
                     @if ($errors->has('name'))
                         <span class="help-block">
@@ -26,7 +23,7 @@
             </div>
 
             <div class="form-group">
-              <label for="name" class="col-md-4 control-label">@lang('register.email')</label>
+              <label for="email" class="col-md-4 control-label">@lang('register.email')</label>
                 <div class="col-md-6">
                   <input type="email" name="email" value="{{ $user->email }}" class="form-control">
                   @if ($errors->has('email'))
@@ -38,7 +35,7 @@
             </div>
 
             <div class="form-group">
-              <label for="name" class="col-md-4 control-label">@lang('register.phone')</label>
+              <label for="phone" class="col-md-4 control-label">@lang('register.phone')</label>
                 <div class="col-md-6">
                   <input type="text" name="phone" value="{{ $user->phone }}" class="form-control">
                   @if ($errors->has('phone'))
@@ -50,7 +47,7 @@
             </div>
 
           <div class="form-group">
-              <label for="name" class="col-md-4 control-label">@lang('register.cellphone')</label>
+              <label for="cellphone" class="col-md-4 control-label">@lang('register.cellphone')</label>
                 <div class="col-md-6">
                   <input type="text" name="cellphone" value="{{ $user->cellphone }}" class="form-control">
                   @if ($errors->has('cellphone'))
@@ -63,9 +60,19 @@
           </div>
 
             <div class="form-group">
-              <label for="name" class="col-md-4 control-label">@lang('register.role')</label>
+              <label for="role" class="col-md-4 control-label">@lang('register.role')</label>
                 <div class="col-md-6">
-                  <input type="text" name="role" value="{{ $user->role }}" class="form-control">
+                  <select class="form-control" name="role">
+                    <option value="user"
+                      @if ($user->role == "user") selected @endif>
+                      Usuario</option>
+                    <option value="professional"
+                      @if ($user->role == "professional") selected @endif>
+                      Profesional</option>
+                    <option value="admin"
+                      @if ($user->role == "admin") selected @endif>
+                      Administrador</option>
+                  </select>
                   @if ($errors->has('role'))
                       <span class="help-block">
                           <strong>{{ $errors->first('role') }}</strong>
@@ -75,9 +82,16 @@
             </div>
 
             <div class="form-group">
-              <label for="name" class="col-md-4 control-label">@lang('register.status')</label>
+              <label for="status" class="col-md-4 control-label">@lang('register.status')</label>
                 <div class="col-md-6">
-                  <input type="text" name="status" value="{{ $user->status }}" class="form-control">
+                  <select class="form-control" name="status">
+                    <option value="active"
+                      @if ($user->status == "active") selected @endif>
+                      Activo</option>
+                    <option value="inactive"
+                      @if ($user->status == "inactive") selected @endif>
+                      Inactivo</option>
+                  </select>
                   @if ($errors->has('status'))
                       <span class="help-block">
                           <strong>{{ $errors->first('status') }}</strong>
@@ -87,7 +101,7 @@
             </div>
 
             <div class="form-group">
-              <label for="name" class="col-md-4 control-label">Foto de Perfil</label>
+              <label for="photo" class="col-md-4 control-label">Foto de Perfil</label>
                 <div class="col-md-6">
 
                   <div class="">
@@ -96,18 +110,10 @@
                     @else
                         <img src="/images/silueta_foto_perfil.jpg"  width="100px" class="thumbnail miniatura" alt="foto">
                     @endif
-
                   </div>
 
                   <input type="file" name="photo" value="{{ $user->photo }}" >
-                  <!-- @if ($errors->has('status'))
-                      <span class="help-block">
-                          <strong>{{ $errors->first('status') }}</strong>
-                      </span>
-                  @endif -->
-
                 </div>
-
             </div>
 
             <div class="form-group">
@@ -115,12 +121,14 @@
                 <button type="submit" class="btn btn-primary" name="save">
                     @lang('register.save')
                 </button>
+                <button type="submit" class="btn btn-default" name="cancel"  formaction="/users" formmethod="get">@lang('register.cancel')
+                </button>
               </div>
             </div>
-            </p>
           </form>
         </div>
       </div>
+    </div>
     </p>
 </div>
 @endsection

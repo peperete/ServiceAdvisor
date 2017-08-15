@@ -16,7 +16,6 @@
                     <option value="id">@lang('register.id')</option>
                     <option value="id_category">@lang('register.id_category')</option>
                     <option value="category">@lang('register.category')</option>
-                    <option value="id_category">@lang('register.category')</option>
                     <option value="status">@lang('register.status')</option>
 
                   </select>

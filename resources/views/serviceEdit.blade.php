@@ -44,7 +44,14 @@
             <div class="form-group">
               <label for="status" class="col-md-4 control-label">@lang('register.status')</label>
               <div class="col-md-6">
-                <input type="text" name="status" value="{{ $service->status }}" class="form-control">
+                <select class="form-control" name="status">
+                  <option value="active"
+                    @if ($service->status == "active") selected @endif>
+                    Activo</option>
+                  <option value="inactive"
+                    @if ($service->status == "inactive") selected @endif>
+                    Inactivo</option>
+                </select>
                 @if ($errors->has('status'))
                   <span class="help-block">
                       <strong>{{ $errors->first('status') }}</strong>
