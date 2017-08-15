@@ -38,4 +38,6 @@ Route::resource('/categories', 'CategoryController');
 Route::get('/services/filter', 'ServiceController@servicesFiltered')->name('servicesFiltered');
 Route::resource('/services', 'ServiceController');
 
+Route::resource('/professionalProfile', 'ProfessionalProfileController');
+
 Route::get('/{x}','HomeController@index')->name('home');

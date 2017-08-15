@@ -73,10 +73,18 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
-
                                 <ul class="dropdown-menu" role="menu">
+                                    @if (Auth::user()->role == "professional")
+                                      <li>
+                                        @if (empty(Auth::user()->professionalProfile()))
+                                          <a href="{{ route('professionalProfile.create') }}">@lang('register.professionalProfile')</a>
+                                        @else
+                                          <a href="{{ route('professionalProfile.index') }}">@lang('register.professionalProfile')</a>
+                                        @endif
+                                      </li>
+                                    @endif
                                     <li>
-                                        <a href="{{ route('perfilEdit') }}">@lang('register.profile')</a>
+                                      <a href="{{ route('perfilEdit') }}">@lang('register.profile')</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('logout') }}"

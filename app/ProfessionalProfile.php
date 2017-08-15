@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ProfessionalProfile extends Model
+class Professionalprofile extends Model
 {
 
   protected $fillable = [

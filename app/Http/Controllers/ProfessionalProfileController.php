@@ -3,9 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Professionalprofile;
 
-class ProfessionalProfileController extends Controller
+class ProfessionalprofileController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('role:professional');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +19,7 @@ class ProfessionalProfileController extends Controller
      */
     public function index()
     {
-        //
+      return view('professionalProfile');
     }
 
     /**
@@ -23,7 +29,7 @@ class ProfessionalProfileController extends Controller
      */
     public function create()
     {
-        //
+        return view('professionalProfileCreate');
     }
 
     /**
@@ -34,7 +40,11 @@ class ProfessionalProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $profile = new Professionalprofile;
+      $profile->businessname = $request->input('businessname');
+      $profile->user_id = $request->input('user_id');
+      $profile->save();
+      return redirect('/');
     }
 
     /**
