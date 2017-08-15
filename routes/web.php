@@ -24,7 +24,7 @@ Route::get('/userRegister', 'HomeController@userRegister')->name('userRegister')
 Route::get('/help', 'HomeController@help')->name('help');
 // Route::get('/profile', 'HomeController@index')->name('home');
 Route::get('/profile', 'HomeController@perfilEdit')->name('perfilEdit');
-// Route::get('/profile/edit/{id}', 'UserConroller@save')->name('usersSave');
+Route::post('/profile/store', 'UserController@store')->name('userStore');
 
 
 Route::get('/users', 'UserController@users')->middleware('role:admin')->name('users');

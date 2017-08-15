@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -50,7 +51,27 @@ class UserController extends Controller
    */
   public function store(Request $request)
   {
-      //
+    $user = Auth::user();
+    $this->validate($request, [
+      'name' => 'required|string|max:255',
+      'phone' => 'required|string|max:255',
+      'cellphone' => 'required|string|max:255',
+      'email' => 'required|string|email|max:255|unique:users,email,'.$user->id,
+    ]);
+
+    if ($request->hasFile('photo')){
+        $file = $request->file('photo');
+        $path = $file->store('photos', 'public');
+        $user->photo = $path;
+    }
+
+    $user->name = $request->input('name');
+     $user->phone = $request->input('phone');
+     $user->cellphone= $request->input('cellphone');
+     $user->email = $request->input('email');
+    $user->save();
+    // var_dump($user); die;
+    return  redirect('/');
   }
 
   /**
