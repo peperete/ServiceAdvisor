@@ -5,13 +5,17 @@
     <div class="row">
       <div class="panel panel-default">
         <div class="panel-heading"><h3>Crear Categoria</h3></div>
+        <!---                 errores js   -->
+        <div class="alert alert-danger" role="alert" id="Err" style="display:none;"></div>
+
+        <!---                fin errores  js -------------------->
         <div class="panel-body">
-          <form class="form-horizontal" method="POST"  action="/categories" enctype="multipart/form-data">
+          <form class="form-horizontal" method="POST"  action="/categories" enctype="multipart/form-data" id="formulario">
             {{ csrf_field() }}
             <div class="form-group">
               <label for="name" class="col-md-4 control-label">@lang('register.name')</label>
               <div class="col-md-6">
-                <input type="text" name="name" class="form-control">
+                <input type="text" name="name" class="form-control" id="name">
                 @if ($errors->has('name'))
                   <span class="help-block">
                       <strong>{{ $errors->first('name') }}</strong>
@@ -23,7 +27,7 @@
             <div class="form-group">
               <label for="status" class="col-md-4 control-label">@lang('register.status')</label>
               <div class="col-md-6">
-                <input type="text" name="status" class="form-control">
+                <input type="text" name="status" class="form-control" id="status">
                 @if ($errors->has('status'))
                   <span class="help-block">
                       <strong>{{ $errors->first('status') }}</strong>
@@ -49,7 +53,7 @@
 
             <div class="form-group">
             <div class="col-md-6 col-md-offset-4">
-                <button type="submit" class="btn btn-success" name="save">
+                <button type="submit" class="btn btn-success" name="save" id="login">
                     @lang('register.save')
                 </button>
                 <button type="submit" class="btn btn-default" name="cancel"  formaction="/categories" formmethod="GET">@lang('register.cancel')
@@ -61,4 +65,5 @@
       </div>
     </div>
 </div>
+<script src="{{ asset('js/validacategorycreate.js') }}"></script>
 @endsection
